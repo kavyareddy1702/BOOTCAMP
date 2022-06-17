@@ -1,127 +1,140 @@
-#include <stdio.h>
-char square[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-int checkwin();
-void board();
+// #include <stdio.h>
+// char board[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+// int winner();
+// void showboard();
 
-int main()
-{
-    int player = 1, i, choice;
+// int main()
+// {
+//     int player = 1, i, op;
+//     char label;
 
-    char mark;
-    do
-    {
-        board();
-        player = (player % 2) ? 1 : 2;
 
-        printf("Player %d, enter a number:  ", player);
-        scanf("%d", &choice);
+//     printf("\n\n\tT I K   T A K   T O E\n\n");
+//     printf("\tPlayer 1 : O\n");
+//     printf("\tPlayer 2 : X\n\n\n");
 
-        mark = (player == 1) ? 'X' : 'O';
-
-        if (choice == 1 && square[1] == '1')
-            square[1] = mark;
-            
-        else if (choice == 2 && square[2] == '2')
-            square[2] = mark;
-            
-        else if (choice == 3 && square[3] == '3')
-            square[3] = mark;
-            
-        else if (choice == 4 && square[4] == '4')
-            square[4] = mark;
-            
-        else if (choice == 5 && square[5] == '5')
-            square[5] = mark;
-            
-        else if (choice == 6 && square[6] == '6')
-            square[6] = mark;
-            
-        else if (choice == 7 && square[7] == '7')
-            square[7] = mark;
-            
-        else if (choice == 8 && square[8] == '8')
-            square[8] = mark;
-            
-        else if (choice == 9 && square[9] == '9')
-            square[9] = mark;
-            
-        else
-        {
-            printf("Invalid move ");
-
-            player--;
-        }
-        i = checkwin();
-
-        player++;
-    }while (i ==  - 1);
     
-    board();
+//     do
+//     {
+//         showboard();
+//         printf("\n\tEnter a number : \n");
+//         if(player%2){
+//             player = 1;
+//         }
+//         else{
+//             player =2;
+//         }
+
+//         printf("\tPlayer %d : ", player);
+//         scanf("%d", &op);
+//         printf("\n");
+//         if(player == 1){
+//             label='O';}
+//         else{
+//             label = 'X';
+//         }
+
+//         if (op == 1 && board[1] == '1')
+//             board[1] = label;
+            
+//         else if (op == 2 && board[2] == '2')
+//             board[2] = label;
+            
+//         else if (op == 3 && board[3] == '3')
+//             board[3] = label;
+            
+//         else if (op == 4 && board[4] == '4')
+//             board[4] = label;
+            
+//         else if (op == 5 && board[5] == '5')
+//             board[5] = label;
+            
+//         else if (op == 6 && board[6] == '6')
+//             board[6] = label;
+            
+//         else if (op == 7 && board[7] == '7')
+//             board[7] = label;
+            
+//         else if (op == 8 && board[8] == '8')
+//             board[8] = label;
+            
+//         else if (op == 9 && board[9] == '9')
+//             board[9] = label;
+            
+//         else
+//         {
+//             printf("\tINVALID MOVE!\n");
+//             player--;
+//         }
+//         i = winner();
+
+//         player++;
+//     }while (i ==  - 1);
     
-    if (i == 1)
-        printf("==>\aPlayer %d win ", --player);
-    else
-        printf("==>\aGame draw");
-    return 0;
-}
+//     showboard();
+    
+//     if (i == 1)
+//         printf("\n\tPlayer %d has won!", --player);
+//     else
+//         printf("\n\tIt's a draw!");
+//     return 0;
+// }
 
 
-int checkwin()
-{
-    if (square[1] == square[2] && square[2] == square[3])
-        return 1;
+// int winner()
+// {
+
+//     // horizontal condition
+
+//     if (board[1] == board[2] && board[2] == board[3])
+//         return 1;
         
-    else if (square[4] == square[5] && square[5] == square[6])
-        return 1;
+//     else if (board[4] == board[5] && board[5] == board[6])
+//         return 1;
         
-    else if (square[7] == square[8] && square[8] == square[9])
-        return 1;
+//     else if (board[7] == board[8] && board[8] == board[9])
+//         return 1;
+
+//     //vertical condition
         
-    else if (square[1] == square[4] && square[4] == square[7])
-        return 1;
+//     else if (board[1] == board[4] && board[4] == board[7])
+//         return 1;
         
-    else if (square[2] == square[5] && square[5] == square[8])
-        return 1;
+//     else if (board[2] == board[5] && board[5] == board[8])
+//         return 1;
         
-    else if (square[3] == square[6] && square[6] == square[9])
-        return 1;
+//     else if (board[3] == board[6] && board[6] == board[9])
+//         return 1;
         
-    else if (square[1] == square[5] && square[5] == square[9])
-        return 1;
+
+//     // diagonal condition
+
+//     else if (board[1] == board[5] && board[5] == board[9])
+//         return 1;
         
-    else if (square[3] == square[5] && square[5] == square[7])
-        return 1;
+//     else if (board[3] == board[5] && board[5] == board[7])
+//         return 1;
+
+//     // no choice selected 
         
-    else if (square[1] != '1' && square[2] != '2' && square[3] != '3' &&
-        square[4] != '4' && square[5] != '5' && square[6] != '6' && square[7] 
-        != '7' && square[8] != '8' && square[9] != '9')
+//     else if (board[1] != '1' && board[2] != '2' && board[3] != '3' &&
+//         board[4] != '4' && board[5] != '5' && board[6] != '6' && board[7] 
+//         != '7' && board[8] != '8' && board[9] != '9')
 
-        return 0;
-    else
-        return  - 1;
-}
+//         return 0;
+    
+//     else
+//         return  - 1;
+// }
 
 
+// void showboard()
+// {
+//     printf("\t  %c  |  %c  |  %c \n", board[1], board[2], board[3]);
+//     printf("\t-----------------\n");
+//     printf("\t  %c  |  %c  |  %c \n", board[4], board[5], board[6]);
+//     printf("\t-----------------\n");
+//     printf("\t  %c  |  %c  |  %c \n", board[7], board[8], board[9]);
+// }
 
 
-void board()
-{
-    printf("\n\n\tTic Tac Toe\n\n");
-
-    printf("Player 1 (X)  -  Player 2 (O)\n\n\n");
-
-    printf("     |     |     \n");
-    printf("  %c  |  %c  |  %c \n", square[1], square[2], square[3]);
-
-    printf("_____|_____|_____\n");
-    printf("     |     |     \n");
-
-    printf("  %c  |  %c  |  %c \n", square[4], square[5], square[6]);
-
-    printf("_____|_____|_____\n");
-    printf("     |     |     \n");
-
-    printf("  %c  |  %c  |  %c \n", square[7], square[8], square[9]);
-
-    printf("     |     |     \n\n");
-}
