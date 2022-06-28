@@ -1,3 +1,8 @@
+//pointer is a special type of variable which is used to store the address of another variable 
+// syntax -> *pointer name 
+// pointer to pointer
+//syntax -> **pointername (to store the address of another pointer)
+// access specifiers -> %d,%u,%p,%x
 #include<stdio.h>
 int main(){
 

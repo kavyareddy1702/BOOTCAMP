@@ -1,7 +1,14 @@
+//user deined dataype which is used to store dissimiliar type of data items 
+// syntax -> struct structurename{
+//                  datatype 1;
+//                  datatype 2;
+//                  };    
+
+
 #include<stdio.h>
 struct student{
     char name[10];
-    int roll;
+    int roll;v
 };
 int main()
 {

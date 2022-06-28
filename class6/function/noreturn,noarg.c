@@ -1,3 +1,13 @@
+// there are 4 ways to create a function
+// function with no return no arg
+// function with no return with arg
+// function with return no arg
+// function with return with arg
+
+// steps to create a function
+// function declaration -> return type function name ();
+// function defination -> return type functionname()
+// function call ->functionname();
 #include<stdio.h>
 void add();
 void add(){
